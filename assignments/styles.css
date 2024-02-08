@@ -1,2 +1,37 @@
 
-body {background-color: lightcyan;}
+body {
+    Margin: 0 20%;
+    background-color: lightcyan;
+    font-family: serif;
+}
+
+img {
+    border-radius: 50%;
+    padding: 5px;
+    border: 5px solid #0b1039;
+  }
+
+h1 {
+    font-family: serif;
+    font-size: 40px;
+    font-weight: normal;
+    text-transform: uppercase;
+    border-bottom: 2px solid #57b1dc;
+    margin-top: 30px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: rgb(199, 139, 10);
+    text-align: center;
+}
+
+p {
+    margin-top: -10px;
+    font-size: 18px;
+    color: rgb(0, 57, 121);
+    text-align: center;
+}
