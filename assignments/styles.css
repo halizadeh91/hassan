@@ -1,21 +1,18 @@
 
 header {
     background-color: #57b1dc;
-    height: 4rem;
     padding: 40px 25px;
-    align-items: center;
 }
-
+.main {
+    display: grid;
+}
 nav {
     background-color: #002d71;
-    
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    align-items: center;
-    justify-content: center;
     padding: 20px 40px;
 }
 
@@ -24,9 +21,22 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     background-color: #57b1dc;
-    padding: 16px;
+    padding: 16px 30px;
+    margin: 0 20px;
     border-radius: 12px;
+    transition: background-color 0.20s ease;
+}
 
+.about {
+    grid-column: 1 / span 8;
+    padding: 0 5% 2rem 0;
+}
+.photo {
+    grid-column: 9 / span 4;
+}
+
+nav ul li a:hover {
+    background-color: #2f94c3;
 }
 
 body {
@@ -47,7 +57,6 @@ h1 {
     text-transform: uppercase;
     border-bottom: 2px solid #57b1dc;
     margin-top: 30px;
-    text-align: center;
 }
 
 h2 {
@@ -55,12 +64,14 @@ h2 {
     font-family: sans-serif;
     font-size: 18px;
     color: #002d71;
-    text-align: center;
 }
 
 
 p {
     margin-top: -10px;
     font-size: 18px;
-    text-align: center;
+}
+
+footer {
+    padding: 20px 0;
 }
