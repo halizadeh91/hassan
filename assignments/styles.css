@@ -1,15 +1,14 @@
-
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
 header {
     background-color: #57b1dc;
     padding: 40px 25px;
+    margin: 0;
 }
-.main {
-    display: grid;
-}
-.container {
-    background-color: white;
-    padding: 0 50px;
-}
+
+
 nav {
     background-color: #002d71;
 }
@@ -31,22 +30,12 @@ nav ul li a {
     transition: background-color 0.20s ease;
 }
 
-.about {
-    grid-column: 1 / span 8;
-    padding: 0 5% 2rem 0;
-}
-.photo {
-    grid-column: 9 / span 4;
-}
-
 nav ul li a:hover {
     background-color: #2f94c3;
 }
 
 body {
-    Margin: 0 20%;
-    background-color: rgb(254, 255, 246);
-    font-family: sans-serif;
+    Margin: 0;
     background-image: url(/Images/bg.png);
 }
 
@@ -77,6 +66,33 @@ p {
     font-size: 18px;
 }
 
-footer {
-    padding: 20px 0;
+
+/*** container ***/
+
+.container {
+    background-color: white;
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(12, 1fr);
+    margin: 0 auto;
+    width: min(95%, 75rem);
+}
+
+.container > * {
+    grid-column: span 12;
+}
+
+@media screen and (min-width: 40rem) {
+    .col-span-8 {
+        grid-column: span 8;
+        padding: 0 5%;
+    }
+    .col-span-4 {
+        grid-column: span 4;
+    }
+    .foot {
+        display: grid;
+        grid-column: span 8;
+        padding: 10px 5%;
+    }
 }
