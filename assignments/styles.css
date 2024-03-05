@@ -45,6 +45,12 @@ aside img {
     border: 5px solid #002d71;
   }
 
+section img {
+    border-radius: 50%;
+    padding: 5px;
+    border: 5px solid #002d71;
+  }
+
 h1 {
     font-size: 40px;
     font-weight: bold;
@@ -95,4 +101,8 @@ p {
         grid-column: span 8;
         padding: 10px 5%;
     }
+}
+
+#Project {
+    text-align: center;
 }
