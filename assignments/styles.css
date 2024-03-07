@@ -111,3 +111,10 @@ p {
     text-align: center;
     padding-top: 40px;
 }
+
+@media (max-width:720px) {
+    nav ul {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
