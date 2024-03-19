@@ -43,6 +43,7 @@ aside img {
     border-radius: 50%;
     padding: 5px;
     border: 5px solid #002d71;
+    width: 4%;
   }
 
 section img {
@@ -118,3 +119,44 @@ p {
         gap: 20px;
     }
 }
+
+.card-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 8px;
+    margin-bottom: 40px;
+    padding: 5%;
+}
+
+.card {
+    border: 2px solid #888;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-img {
+    width: 100%;
+}
+
+.card-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: rgb(48,110,193);
+    color: #fff;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+  }
+  
+
+.card-body {
+    padding: 20px;
+}
+
+.card-subtitle {
+    color: #888;
+  }
+
+.card-btn:hover {
+    background-color: rgb(68,130,213);
+  }
