@@ -40,10 +40,10 @@ body {
 }
 
 aside img {
+    max-width: 250px;
     border-radius: 50%;
     padding: 5px;
     border: 5px solid #002d71;
-    width: 4%;
   }
 
 section img {
