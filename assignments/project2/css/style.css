@@ -1,0 +1,97 @@
+video {
+    bottom: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.banner {
+    overflow: hidden;
+}
+
+nav {
+    margin: 0;
+    padding: 0;
+    position: sticky;
+}
+
+.logo {
+    float: left;
+    height: 40px;
+    vertical-align: middle;
+    padding-left: 40px;
+  }
+
+#navi-list {
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 400 important;
+    order: 100;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 45px;
+    background: linear-gradient(90deg, rgba(6,17,96,1) 0%, rgba(16,31,186,1) 48%, rgba(61,136,225,1) 100%);
+    color: #fff;
+    border-radius: 200px;
+    transition: all 0.2s ease;
+  }
+
+#navi-list a {
+    padding: 30px;
+    text-decoration: none;
+    color: #101FBA;
+}
+
+.bannercontent {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 55%);
+}
+
+.bantext {
+    margin-left: 50px;
+    position: absolute;
+    bottom: 40%;
+    color: #fff;
+}
+
+
+p , a {
+    font-family: "Lato", sans-serif;
+    font-weight: 350;
+    font-style: normal;
+  }
+  
+  .btn a {
+    font-size: 12px important;
+  }
+
+h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+  }
+
+  .secondrow {
+    top: 100%;
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-color: #E0E8EB;
+  }
