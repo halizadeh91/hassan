@@ -18,7 +18,7 @@
     font-family: "Lato", sans-serif;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 400;
     vertical-align: middle;
     display: flex;
@@ -40,8 +40,21 @@
     padding: 20px 45px;
     background: linear-gradient(90deg, rgba(6,17,96,1) 0%, rgba(16,31,186,1) 48%, rgba(61,136,225,1) 100%);
     color: #fff;
+    font-size: 12px;
     border-radius: 200px;
     transition: all 0.2s ease;
+  }
+
+
+  .btnw {
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 45px;
+    background: #fff;
+    border-radius: 200px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 3px solid black;
   }
 
 #navi-list a {
@@ -71,10 +84,7 @@ p , a {
     font-style: normal;
     font-size: 22px;
   }
-  
-  .btn {
-    font-size: 12px;
-  }
+
 
 h1 {
     font-family: "Lato", sans-serif;
