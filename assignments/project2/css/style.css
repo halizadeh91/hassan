@@ -47,6 +47,7 @@
 
 
   .btnw {
+    color: black;
     display: inline-block;
     text-decoration: none;
     padding: 20px 45px;
@@ -54,7 +55,6 @@
     border-radius: 200px;
     font-size: 12px;
     font-weight: 500;
-    border: 3px solid black;
   }
 
 #navi-list a {
