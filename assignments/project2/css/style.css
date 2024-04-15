@@ -1,24 +1,23 @@
-
 .navv {
   position: fixed;
   top: 0;
   width: 100%;
   height: auto;
-    background-color: #fff;
-    justify-content: center;
-    z-index: 10000;
-    }
-    
+  background-color: #fff;
+  justify-content: center;
+  z-index: 10000;
+}
+
 #navi-list {
-    font-family: "Lato", sans-serif;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
-    vertical-align: middle;
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+  font-family: "Lato", sans-serif;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
 }
 
 .logo {
@@ -44,7 +43,7 @@
   bottom: 0;
   width: 100%;
   height: 50vh;
-  background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 55%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 55%);
 }
 
 .bantext {
@@ -55,100 +54,101 @@
 
 
 .btn {
-    display: inline-block;
-    text-decoration: none;
-    padding: 20px 45px;
-    background: linear-gradient(90deg, rgba(6,17,96,1) 0%, rgba(16,31,186,1) 48%, rgba(61,136,225,1) 100%);
-    color: #fff;
-    font-size: 12px;
-    border-radius: 200px;
-    transition: all 0.2s ease;
-  }
-
-
-  .btnw {
-    color: black;
-    display: inline-block;
-    text-decoration: none;
-    padding: 20px 45px;
-    background: #fff;
-    border-radius: 200px;
-    font-size: 12px;
-    font-weight: 500;
-  }
-
-#navi-list a {
-    padding: 30px;
-    text-decoration: none;
-    color: #101FBA;
+  display: inline-block;
+  text-decoration: none;
+  padding: 20px 45px;
+  background: linear-gradient(90deg, rgba(6, 17, 96, 1) 0%, rgba(16, 31, 186, 1) 48%, rgba(61, 136, 225, 1) 100%);
+  color: #fff;
+  font-size: 12px;
+  border-radius: 200px;
+  transition: all 0.2s ease;
 }
 
 
-p , a {
-    font-family: "Lato", sans-serif;
-    font-weight: 350;
-    font-style: normal;
-    font-size: 22px;
-  }
+.btnw {
+  color: black;
+  display: inline-block;
+  text-decoration: none;
+  padding: 20px 45px;
+  background: #fff;
+  border-radius: 200px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+#navi-list a {
+  padding: 30px;
+  text-decoration: none;
+  color: #101FBA;
+}
+
+
+p,
+a {
+  font-family: "Lato", sans-serif;
+  font-weight: 350;
+  font-style: normal;
+  font-size: 22px;
+}
 
 
 h1 {
-    font-family: "Lato", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 70px;
-  }
-
-  .section2 {
-    position: relative;
-    background-color: #E0E8EB;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 1.5rem;
-    margin: 0 auto;
-    padding: 5%;
-    justify-items: center;
-    align-items: center;
-  }
-
-  .col-span-2 {
-    grid-column: span 2;
-  }
-
-  .col-span-4 {
-    justify-content: center;
-    align-items: center;
-    grid-column: span 4;
-    text-align: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 70px;
 }
 
-  .section2 img {
-    text-align: center;
-    position: relative;
-    width: 90%;
-    border-radius: 30px;
-  }
+.section2 {
+  position: relative;
+  background-color: #E0E8EB;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin: 0 auto;
+  padding: 5%;
+  justify-items: center;
+  align-items: center;
+}
+
+.col-span-2 {
+  grid-column: span 2;
+}
+
+.col-span-4 {
+  justify-content: center;
+  align-items: center;
+  grid-column: span 4;
+  text-align: center;
+}
+
+.section2 img {
+  text-align: center;
+  position: relative;
+  width: 90%;
+  border-radius: 30px;
+}
 
 
-  .section3 {
-    background: radial-gradient(circle, rgba(7,9,98,1) 0%, rgba(16,19,133,1) 50%, rgba(64,135,197,1) 100%);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
-    padding: 5%;
-    }
+.section3 {
+  background: radial-gradient(circle, rgba(7, 9, 98, 1) 0%, rgba(16, 19, 133, 1) 50%, rgba(64, 135, 197, 1) 100%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  padding: 5%;
+}
 
-  .section3 img {
-    text-align: center;
-    position: relative;
-    width: 100%;
-    border-radius: 30px;
-  }
+.section3 img {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  border-radius: 30px;
+}
 
-    .col-span-3 {
-    grid-column: span 3;
-    justify-content: center;
-    align-items: center;
-  }
+.col-span-3 {
+  grid-column: span 3;
+  justify-content: center;
+  align-items: center;
+}
 
 
 .servv {
@@ -173,15 +173,17 @@ h1 {
 
 
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .container {
