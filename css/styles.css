@@ -1,0 +1,288 @@
+.main {
+    position: fixed;
+    background: rgb(239, 249, 255);
+    display: flex;
+    height: 100vh;
+}
+
+
+.center-sec {
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+}
+
+.center-sec img {
+    border-radius: 100%;
+    height: 200px;
+    z-index: 1;
+}
+
+.left {
+    background: linear-gradient(-45deg, rgba(239, 249, 255, 1) 50%, rgba(208, 233, 255, 1) 100%);
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    /* Center vertically */
+    justify-content: start;
+    /* Center horizontally */
+}
+
+.left-container {
+    display: flex;
+}
+
+
+.right {
+    width: 50vw;
+    background: linear-gradient(-45deg, rgba(239, 249, 255, 1) 50%, rgba(208, 233, 255, 1) 100%);
+    display: flex;
+    align-items: center;
+    /* Center vertically */
+    justify-content: end;
+    /* Center horizontally */
+}
+
+.right-container {
+    display: flex;
+}
+
+/*
+.line1,
+.line2,
+.line3 {
+	margin: 5vh 10vh;
+    position: relative;
+    display: flex;
+    background-color: black;
+    width: 20vw;
+    height: 2vh;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center; }
+*/
+
+.hass {
+    position: absolute;
+    background: radial-gradient(circle, rgba(0, 71, 134, 0.8842130602240896) 0%, rgba(79, 189, 255, 0) 48%);
+    border-radius: 100%;
+    height: 400px;
+    width: 400px;
+    z-index: 0;
+}
+
+
+.gridBlock {
+    opacity: 0;
+}
+
+
+.grid-container {
+    width: 80vw;
+    height: 200vh;
+    position: relative;
+}
+
+.grid {
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 70vw;
+    height: 60vw;
+    margin: 0 calc(100vw / 20 * 3);
+    position: absolute;
+
+}
+
+@media only screen and (max-width: 580px) {
+    .grid {
+        margin: 0;
+        width: 100vw;
+        height: 89.444vw;
+    }
+}
+
+.gridBlock {
+    background-size: cover;
+    background-color: darkgray;
+}
+
+.gridLayer {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    will-change: transform;
+    transform-origin: 44.951% 50%;
+}
+
+.gridLayer:nth-child(1) .gridBlock {
+    top: 5vw;
+    left: 20vw;
+    width: 10vw;
+    height: 10vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(1) .gridBlock {
+        top: 11.111vw;
+        left: 23.889vw;
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+.gridLayer:nth-child(2) .gridBlock {
+    top: 0;
+    left: 32.5vw;
+    width: 15vw;
+    height: 15vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(2) .gridBlock {
+        top: 0;
+        left: 43.333vw;
+        width: 26.389vw;
+        height: 26.389vw;
+    }
+}
+
+.gridLayer:nth-child(3) .gridBlock {
+    left: 0;
+    top: 25vw;
+    width: 15vw;
+    height: 15vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(3) .gridBlock {
+        top: 30.278vw;
+        left: 0;
+        width: 26.389vw;
+        height: 26.389vw;
+    }
+}
+
+.gridLayer:nth-child(4) .gridBlock {
+    display: none;
+    top: 17.5vw;
+    left: 17.5vw;
+    width: 30vw;
+    height: 30vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(4) .gridBlock {
+        top: 30.278vw;
+        left: 30.278vw;
+        width: 39.444vw;
+        height: 39.444vw;
+    }
+}
+
+.gridLayer:nth-child(5) {
+    z-index: 1;
+}
+
+.gridLayer:nth-child(5) .gridBlock {
+    top: 20vw;
+    left: 50vw;
+    width: 5vw;
+    height: 5vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(5) .gridBlock {
+        top: 23.889vw;
+        left: 73.889vw;
+        width: 15.278vw;
+        height: 15.278vw;
+    }
+}
+
+.gridLayer:nth-child(5) a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridLayer:nth-child(5) svg {
+    width: 1.75vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(5) svg {
+        width: 4.722vw;
+    }
+}
+
+.gridLayer:nth-child(6) .gridBlock {
+    left: 50vw;
+    top: 27.5vw;
+    width: 20vw;
+    height: 20vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(6) .gridBlock {
+        top: 43.889vw;
+        left: 73.889vw;
+        width: 26.389vw;
+        height: 26.389vw;
+    }
+}
+
+.gridLayer:nth-child(7) .gridBlock {
+    left: 10vw;
+    top: 42.5vw;
+    width: 5vw;
+    height: 5vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(7) .gridBlock {
+        display: none;
+    }
+}
+
+.gridLayer:nth-child(8) .gridBlock {
+    bottom: 5vw;
+    left: 42.5vw;
+    width: 5vw;
+    height: 5vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(8) .gridBlock {
+        display: none;
+    }
+}
+
+.gridLayer:nth-child(9) .gridBlock {
+    bottom: 0;
+    left: 50vw;
+    width: 10vw;
+    height: 10vw;
+}
+
+@media only screen and (max-width: 580px) {
+    .gridLayer:nth-child(9) .gridBlock {
+        top: 73.889vw;
+        left: 58.889vw;
+        width: 15.278vw;
+        height: 15.278vw;
+    }
+}
+
+.gridBlock {
+    display: block;
+    position: absolute;
+}
