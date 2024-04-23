@@ -176,7 +176,7 @@
         top: 23.889vw;
         left: 63.889vw;
         width: 15vw;
-        height: 15vw;
+        height: 15vw;        
     }
 }
 
@@ -214,6 +214,15 @@
         height: 15vw;
     }
 }
+
+
+.gridLayer:nth-child(3) a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .gridLayer:nth-child(4) .gridBlock {
     bottom: 5vw;
