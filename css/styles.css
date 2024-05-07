@@ -74,20 +74,6 @@
     display: flex;
 }
 
-/*
-.line1,
-.line2,
-.line3 {
-	margin: 5vh 10vh;
-    position: relative;
-    display: flex;
-    background-color: black;
-    width: 20vw;
-    height: 2vh;
-    border-radius: 100px;
-    align-items: center;
-    justify-content: center; }
-*/
 
 .glow {
     position: absolute;
@@ -95,12 +81,6 @@
     border-radius: 100%;
     height: 400px;
     width: 400px;
-    z-index: 0;
-}
-
-
-.gridBlock {
-    opacity: 20;
 }
 
 
@@ -111,7 +91,6 @@
 }
 
 .grid {
-    z-index: 1;
     width: 70vw;
     height: 60vw;
     margin: 0 calc(100vw / 20 * 3);
@@ -133,13 +112,14 @@
 }
 
 .gridLayer {
+    position: absolute;
     top: 0;
     left: 0;
     width: 90%;
     height: 90%;
-    position: absolute;
     will-change: transform;
     transform-origin: 44.951% 50%;
+    z-index: 1;
 }
 
 .gridLayer:nth-child(1) .gridBlock {
@@ -159,9 +139,14 @@
     }
 }
 
-.gridLayer:nth-child(2) {
-    z-index: 1;
+
+.gridLayer:nth-child(1) a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 
 .gridLayer:nth-child(2) .gridBlock {
     top: 20vw;
@@ -182,7 +167,7 @@
 
 .gridLayer:nth-child(2) a {
     height: 100%;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
 }
@@ -194,8 +179,8 @@
 @media only screen and (max-width: 580px) {
     .gridLayer:nth-child(2) svg {
         width: 4.722vw;
-        width: 15;
-        height: 15;
+        width: 15vw;
+        height: 15vw;
     }
 }
 
@@ -218,11 +203,14 @@
 
 .gridLayer:nth-child(3) a {
     height: 100%;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
 }
 
+.gridLayer:nth-child(3) svg {
+    width: 1.75vw;
+}
 
 .gridLayer:nth-child(4) .gridBlock {
     bottom: 5vw;
@@ -242,9 +230,27 @@
     }
 }
 
+.gridLayer:nth-child(4) a {
+    height: 100%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridLayer:nth-child(4) svg {
+    width: 1.75vw;
+}
+
+.gridLayer {
+    z-index: 1;
+    pointer-events: none;
+}
+
 .gridBlock {
     display: block;
     position: absolute;
+    z-index: 999;
+    pointer-events: auto; 
 }
 
 .gridBlock h1 {
@@ -256,3 +262,4 @@
 .gridBlock h1 {
     font-size: 10px;
 }}
+
