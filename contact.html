@@ -15,27 +15,30 @@
 <body>
   <div class="main">
     <section class="center-sec">
-      <form name="contact" method="POST" data-netlify="true">
+
+      <form class="fff" name="contact" method="POST" data-netlify="true" netlify>
+        <input type="hidden" name="form-name" value="contact">
         <p>
-          <label>Your Name: <input type="text" name="name" /></label>
+          <label>Your Name <input type="text" name="name" /></label>
         </p>
         <p>
-          <label>Your Email: <input type="email" name="email" /></label>
+          <label>Your Email <input type="email" name="email" /></label>
         </p>
         <p>
-          <label>Your Role: <select name="role[]" multiple>
-            <option value="leader">Leader</option>
-            <option value="follower">Follower</option>
+          <label>It is about <select name="role[]" multiple>
+            <option value="leader">Design</option>
+            <option value="follower">Photography</option>
+            <option value="follower">Other Jobs</option>
           </select></label>
         </p>
         <p>
-          <label>Message: <textarea name="message"></textarea></label>
+          <label>Message<textarea name="message"></textarea></label>
         </p>
         <p>
           <button type="submit">Send</button>
         </p>
       </form>
-      
+
     </section>
 
     <section class="left">
