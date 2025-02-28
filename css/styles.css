@@ -89,14 +89,14 @@
 
 
 .grid-container {
-    width: 80vw;
-    height: 200vh;
+    width: 100vw;
+    height: 100vh;
     position: relative;
 }
 
 .grid {
-    width: 70vw;
-    height: 60vw;
+    width: 100vw;
+    height: 100vh;
     margin: 0 calc(100vw / 20 * 3);
     position: absolute;
 
@@ -111,8 +111,14 @@
 }
 
 .gridBlock {
-    background-size: cover;
-    background-color: darkgray;
+    background-size: contain;
+    background-repeat: no-repeat;
+    pointer-events: auto;
+}
+
+.gridBlock canvas {
+    width: 100%;
+    height: 100%;
 }
 
 .gridLayer {
@@ -124,7 +130,9 @@
     will-change: transform;
     transform-origin: 44.951% 50%;
     z-index: 1;
+    pointer-events: none;
 }
+
 
 .gridLayer:nth-child(1) .gridBlock {
     top: 10vw;
@@ -143,7 +151,6 @@
     }
 }
 
-
 .gridLayer:nth-child(1) a {
     height: 100%;
     display: flex;
@@ -158,6 +165,15 @@
     width: 10vw;
     height: 10vw;
     border-radius: 100% 0;
+}
+
+
+
+.gridLayer:nth-child(2) .gridBlock {
+    top: 20vw;
+    left: 50vw;
+    width: 10vw;
+    height: 10vw;
 }
 
 @media only screen and (max-width: 580px) {
@@ -176,24 +192,12 @@
     justify-content: center;
 }
 
-.gridLayer:nth-child(2) svg {
-    width: 1.75vw;
-}
-
-@media only screen and (max-width: 580px) {
-    .gridLayer:nth-child(2) svg {
-        width: 4.722vw;
-        width: 15vw;
-        height: 15vw;
-    }
-}
 
 .gridLayer:nth-child(3) .gridBlock {
     left: 15vw;
     bottom: 10vw;
     width: 10vw;
     height: 10vw;
-    border-radius: 100% 0;
 }
 
 @media only screen and (max-width: 580px) {
@@ -204,7 +208,6 @@
     }
 }
 
-
 .gridLayer:nth-child(3) a {
     height: 100%;
     display: block;
@@ -212,16 +215,11 @@
     justify-content: center;
 }
 
-.gridLayer:nth-child(3) svg {
-    width: 1.75vw;
-}
-
 .gridLayer:nth-child(4) .gridBlock {
     bottom: 5vw;
     left: 42.5vw;
     width: 10vw;
     height: 10vw;
-    border-radius: 0 100%;
 }
 
 @media only screen and (max-width: 580px) {
@@ -241,20 +239,11 @@
     justify-content: center;
 }
 
-.gridLayer:nth-child(4) svg {
-    width: 1.75vw;
-}
-
-.gridLayer {
-    z-index: 1;
-    pointer-events: none;
-}
-
 .gridBlock {
     display: block;
     position: absolute;
     z-index: 999;
-    pointer-events: auto; 
+    pointer-events: auto;
 }
 
 .gridBlock h1 {
@@ -266,6 +255,8 @@
 .gridBlock h1 {
     font-size: 10px;
 }}
+
+
 
 .formb {
     display: flex;
@@ -380,7 +371,7 @@ button {
     padding: 5px;
   }
   
-.album img{
+.album img {
     width: 100%; 
   }
 
