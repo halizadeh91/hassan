@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       selector: ".gridLayer:nth-child(3) .gridBlock",
       modelPath: "/image/3d/cv.gltf",
-      href: "/res/Hassan_Alizadeh_Resume.pdf",
+      href: "/res/HassanAlizadehResume_Mar2025.pdf",
       scale: [22, 22, 22]
     },
     {
