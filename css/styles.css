@@ -78,6 +78,13 @@
     display: flex;
 }
 
+.scroll {
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 70%;
+    left: 47%;
+    }
 
 .glow {
     position: absolute;

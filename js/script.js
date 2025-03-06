@@ -29,6 +29,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
+
+  gsap.fromTo(".scroll", {
+    opacity: 1.0
+  }, {
+    opacity: 0.0,
+    scrollTrigger: {
+      trigger: ".grid-container",
+      start: "top top",
+      end: () => innerHeight * 4,
+      scrub: true,
+      toggleActions: "restart pause reverse pause"
+    }
+  });
+
   
 
   // Array describing each block: selector, model path, and link
