@@ -134,7 +134,7 @@
     left: 0;
     width: 90%;
     height: 90%;
-    will-change: transform;
+    will-change: auto;
     transform-origin: 44.951% 50%;
     z-index: 1;
     pointer-events: none;
@@ -399,3 +399,43 @@ button {
         transform: scale(1.3); /* zoom in */
       }
   
+
+
+.boxTest a {
+    text-decoration: none;
+    position: relative;
+    color: white;
+    background-color: darkblue; 
+    border-radius: 20px;
+    padding: 20px;
+    margin: 8vw;
+   }
+
+.textPage {
+    background: linear-gradient(-45deg, rgba(239, 249, 255, 1) 50%, rgba(208, 233, 255, 1) 100%);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center;     /* vertical */
+}
+
+.article {
+    width: 50vw;
+    padding: 5%;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.article * {
+    font-family: Arial;
+}
+
+.article h2 {
+    font-size: 30px;
+}
+
+
+.article a {
+    font-size: 16px;
+}
