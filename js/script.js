@@ -1,159 +1,54 @@
-document.addEventListener("DOMContentLoaded", function() {
-  // GSAP animation setup (unchanged)
-  gsap.registerPlugin(ScrollTrigger);
+// Play the entrance once. The page itself never needs to scroll.
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: ".grid-container",
-      start: "top top",
-      end: () => innerHeight * 4,
-      scrub: true,
-      pin: ".grid",
-      anticipatePin: 1
-    }
-  })
-  .set(".gridBlock:not(.centerBlock)", { autoAlpha: 0 })
-  .to(".gridBlock:not(.centerBlock)", { duration: 0.1, autoAlpha: 1 }, 0.001)
-  .from(".gridLayer", { scale: 3.3333, ease: "none" });
-
-  gsap.fromTo(".box", {
-    opacity: 0.3
-  }, {
-    opacity: 1,
-    scrollTrigger: {
-      trigger: ".grid-container",
-      start: "top top",
-      end: () => innerHeight * 4,
-      scrub: true,
-      toggleActions: "restart pause reverse pause"
-    }
+  const animations = [];
+  document.querySelectorAll(".hero-copy").forEach((element, index) => {
+    animations.push(element.animate([
+      { opacity: 0, transform: "translateY(38px)" },
+      { opacity: 1, transform: "translateY(0)" }
+    ], {
+      duration: 850,
+      delay: 80 + index * 85,
+      easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+      fill: "backwards"
+    }));
   });
 
-
-  gsap.fromTo(".scroll", {
-    opacity: 1.0
-  }, {
-    opacity: 0.0,
-    scrollTrigger: {
-      trigger: ".grid-container",
-      start: "top top",
-      end: () => innerHeight * 4,
-      scrub: true,
-      toggleActions: "restart pause reverse pause"
-    }
+  document.querySelectorAll(".portrait-frame").forEach(element => {
+    animations.push(element.animate([
+      { opacity: 0, transform: "translateY(45px) rotate(3deg) scale(0.96)", offset: 0 },
+      { opacity: 1, transform: "translateY(-10px) rotate(-1deg) scale(1.01)", offset: 0.55 },
+      { opacity: 1, transform: "translateY(4px) rotate(0.5deg) scale(1)", offset: 0.78 },
+      { opacity: 1, transform: "translateY(0) rotate(0) scale(1)", offset: 1 }
+    ], { duration: 1100, delay: 160, easing: "ease-in-out", fill: "backwards" }));
   });
 
-  
-
-  // Array describing each block: selector, model path, and link
-  const threeBlocks = [
-    {
-      selector: ".gridLayer:nth-child(1) .gridBlock",
-      modelPath: "/image/3d/design.gltf",
-      // This link should match what's already in your <a> (but we'll set it anyway)
-      href: "https://www.behance.net/hassanalizadeh",
-      // Optional scale if you want each model different
-      scale: [25, 25, 25]
-    },
-    {
-      selector: ".gridLayer:nth-child(2) .gridBlock",
-      modelPath: "/image/3d/photo.gltf",
-      href: "/photography.html",
-      scale: [22, 22, 22]
-    },
-    {
-      selector: ".gridLayer:nth-child(3) .gridBlock",
-      modelPath: "/image/3d/cv.gltf",
-      href: "/res/HassanAlizadeh_CV.pdf",
-      scale: [22, 22, 22]
-    },
-    {
-      selector: ".gridLayer:nth-child(4) .gridBlock",
-      modelPath: "/image/3d/contact.gltf",
-      href: "/contact.html",
-      scale: [22, 22, 22]
-    }
-  ];
-
-  threeBlocks.forEach(({ selector, modelPath, href, scale }) => {
-    // 1) Find the block in the DOM
-    const blockEl = document.querySelector(selector);
-    if (!blockEl) return; // Skip if this element doesn't exist
-
-    // 2) Grab the existing <a> inside the .gridBlock
-    const linkEl = blockEl.querySelector("a");
-    if (!linkEl) return;
-
-    // Make sure the link goes where we want
-    linkEl.href = href;
-    linkEl.target = "_blank"; // or "_self" if you want same-window navigation
-
-    // 3) Create the Three.js scene, camera, and renderer
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      blockEl.offsetWidth / blockEl.offsetHeight,
-      0.1,
-      1000
-    );
-    const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setPixelRatio(window.devicePixelRatio);
-
-    // Size the renderer to match the .gridBlock
-    renderer.setSize(blockEl.offsetWidth, blockEl.offsetHeight);
-
-    // 4) Append the renderer's canvas into the <a>
-    linkEl.appendChild(renderer.domElement);
-
-    // 5) Add lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambientLight);
-
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
-    directionalLight.position.set(1, 1, 1).normalize();
-    scene.add(directionalLight);
-
-    // 6) Load the GLTF Model
-    const loader = new THREE.GLTFLoader();
-    loader.load(
-      modelPath,
-      function(gltf) {
-        const model = gltf.scene;
-        model.scale.set(scale[0], scale[1], scale[2]); 
-        model.position.set(0, -1, 0);
-        scene.add(model);
-
-        // Animate the model
-        function animate() {
-          requestAnimationFrame(animate);
-        
-          // Use time-based rotation for a smooth wave effect
-          const time = Date.now() * 0.001; // Convert ms to seconds
-          model.rotation.y = Math.sin(time) * 0.2; 
-          model.rotation.x = Math.cos(time * 0.5) * 0.1;
-        
-          renderer.render(scene, camera);
-        }
-        animate();
-      },
-      undefined,
-      function(error) {
-        console.error("Error loading GLTF:", error);
-      }
-    );
-
-    // Position the camera so the model is visible
-    camera.position.z = 4;
-
-    // 7) Handle window resizing for responsiveness
-    window.addEventListener("resize", () => {
-      // Re-calc .gridBlock size
-      const width = blockEl.offsetWidth;
-      const height = blockEl.offsetHeight;
-
-      camera.aspect = width / height;
-      camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
-    });
+  // Shuffle entrance timing while keeping the navigation in its familiar order.
+  const items = Array.from(document.querySelectorAll(".gridLayer"));
+  for (let index = items.length - 1; index > 0; index--) {
+    const randomIndex = Math.floor(Math.random() * (index + 1));
+    [items[index], items[randomIndex]] = [items[randomIndex], items[index]];
+  }
+  items.forEach((element, index) => {
+    animations.push(element.animate([
+      { opacity: 0, transform: "translateY(110px) scale(0.78, 1.16)", offset: 0, easing: "cubic-bezier(0.16, 1, 0.3, 1)" },
+      { opacity: 1, transform: "translateY(-38px) scale(1.06, 0.96)", offset: 0.38, easing: "ease-in" },
+      { opacity: 1, transform: "translateY(10px) scale(1.12, 0.86)", offset: 0.56, easing: "ease-out" },
+      { opacity: 1, transform: "translateY(-20px) scale(0.96, 1.06)", offset: 0.71, easing: "ease-in" },
+      { opacity: 1, transform: "translateY(5px) scale(1.04, 0.96)", offset: 0.83, easing: "ease-out" },
+      { opacity: 1, transform: "translateY(-7px) scale(1)", offset: 0.92, easing: "ease-in-out" },
+      { opacity: 1, transform: "translateY(0) scale(1)", offset: 1 }
+    ], {
+      duration: 1250,
+      delay: 180 + index * 100 + Math.random() * 50,
+      easing: "ease-in-out",
+      fill: "backwards"
+    }));
   });
+
+  // Keyboard users can reach every link immediately, including during the intro.
+  document.addEventListener("focusin", () => {
+    animations.forEach(animation => animation.finish());
+  }, { once: true });
 });
