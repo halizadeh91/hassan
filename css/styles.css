@@ -315,3 +315,13 @@ button {
 .article a {
     font-size: 16px;
 }
+
+/* Keep layout measurable while assets prepare, then reveal with the entrance. */
+.page-loading .hero-copy,
+.page-loading .portrait-frame,
+.page-loading .gridLayer { opacity: 0; }
+.page-loading::after {
+    content: "Loading…"; position: fixed; inset: 0; display: grid;
+    place-items: center; color: #5e7585; font: 13px "Manrope", Arial, sans-serif;
+    letter-spacing: 0.04em; pointer-events: none;
+}

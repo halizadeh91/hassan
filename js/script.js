@@ -1,8 +1,30 @@
-// Play the entrance once. The page itself never needs to scroll.
-document.addEventListener("DOMContentLoaded", () => {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
+// Wait for decoded imagery, fonts, and the first render of every 3D icon.
+document.addEventListener("DOMContentLoaded", async () => {
+  const root = document.documentElement;
   const animations = [];
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  function reveal() {
+    clearTimeout(window.pageLoadFallback);
+    root.classList.remove("page-loading");
+  }
+  document.addEventListener("focusin", () => {
+    reveal();
+    animations.forEach(animation => animation.finish());
+  }, { once: true });
+
+  const portrait = document.querySelector("#page1");
+  await Promise.allSettled([
+    portrait ? portrait.decode() : Promise.resolve(),
+    document.fonts.ready,
+    import("./icons-3d.js").then(module => module.iconsReady)
+  ]);
+  // A timeout or keyboard interaction reveals the page without a late replay.
+  if (!root.classList.contains("page-loading") || reducedMotion.matches) {
+    reveal();
+    return;
+  }
+  await new Promise(resolve => requestAnimationFrame(resolve));
+
   document.querySelectorAll(".hero-copy").forEach((element, index) => {
     animations.push(element.animate([
       { opacity: 0, transform: "translateY(38px)" },
@@ -47,8 +69,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }));
   });
 
-  // Keyboard users can reach every link immediately, including during the intro.
-  document.addEventListener("focusin", () => {
-    animations.forEach(animation => animation.finish());
-  }, { once: true });
+  reveal();
 });

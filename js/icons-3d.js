@@ -4,7 +4,7 @@ import { FBXLoader } from './vendor/three/FBXLoader.js';
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const loader = new FBXLoader();
 
-document.querySelectorAll('[data-model]').forEach(async preview => {
+export const iconsReady = Promise.allSettled(Array.from(document.querySelectorAll('[data-model]'), async preview => {
   let renderer;
   try {
     renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
@@ -52,7 +52,7 @@ document.querySelectorAll('[data-model]').forEach(async preview => {
     preview.append(canvas);
 
     function render() { renderer.render(scene, camera); }
-    const resize = new ResizeObserver(() => {
+    function resizeAndRender() {
       const width = preview.clientWidth;
       const height = preview.clientHeight;
       if (!width || !height) return;
@@ -61,7 +61,9 @@ document.querySelectorAll('[data-model]').forEach(async preview => {
       camera.updateProjectionMatrix();
       render();
       preview.classList.add('model-loaded');
-    });
+    }
+    resizeAndRender();
+    const resize = new ResizeObserver(resizeAndRender);
     resize.observe(preview);
 
     // Render only while the link is being interacted with.
@@ -94,4 +96,4 @@ document.querySelectorAll('[data-model]').forEach(async preview => {
     renderer?.dispose();
     console.warn('Unable to display 3D icon:', preview.dataset.model, error);
   }
-});
+}));

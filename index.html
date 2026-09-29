@@ -5,9 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hassan Alizadeh Portfolio</title>
+  <script>
+    document.documentElement.classList.add('page-loading');
+    window.pageLoadFallback = setTimeout(() => {
+      document.documentElement.classList.remove('page-loading');
+    }, 12000);
+  </script>
   <link rel="stylesheet" href="./css/styles.css">
   <script src="js/script.js" defer></script>
-  <script type="module" src="js/icons-3d.js"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -26,7 +32,7 @@
     </div>
     <div class="portrait-frame">
       <div class="portrait-art">
-        <img src="./image/Hassan3.JPG" alt="Hassan Alizadeh" id="page1">
+        <img src="./image/portrait-web.jpg" alt="Hassan Alizadeh" id="page1" fetchpriority="high" decoding="async">
       </div>
     </div>
     </section>
@@ -36,7 +42,7 @@
         <div class="gridLayer">
           <div class="gridBlock">
             <a href="https://www.behance.net/hassanalizadeh" target="_blank" rel="noopener noreferrer">
-              <span class="model-preview" data-model="./image/Icons/3d/Behance.fbx" aria-hidden="true"></span>
+              <span class="model-preview" data-model="./image/Icons/3d/behance.fbx" aria-hidden="true"></span>
               <span class="item-title">Behance</span>
               <span class="item-description">Brand & design</span>
             </a>
