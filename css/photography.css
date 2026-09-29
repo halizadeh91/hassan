@@ -1,0 +1,68 @@
+:root { font-family: "Manrope", Arial, sans-serif; color: #163448; background: #edf7fd; font-synthesis: none; }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 44px; }
+body { margin: 0; background: radial-gradient(ellipse at 80% 0, #fff9, transparent 45%), linear-gradient(135deg, #e4f2fc, #f4faff); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+a:focus-visible, button:focus-visible { outline: 2px solid #357aa6; outline-offset: 6px; }
+.page-width { width: min(920px, 88%); margin-inline: auto; }
+.site-header { display: flex; justify-content: space-between; align-items: center; padding-block: 38px; }
+.brand { font-size: 17px; font-weight: 800; letter-spacing: -.04em; }
+.back-link { font-size: 12px; font-weight: 600; }
+.back-link span { margin-right: 9px; }
+.gallery-intro { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding: 64px 0 20px; }
+h1 { font-size: clamp(40px, 5.2vw, 68px); font-weight: 600; letter-spacing: -.065em; line-height: 1.05; margin: 0; }
+.intro-copy { font-size: 13px; line-height: 1.9; color: #597487; margin: 0 0 5px; }
+.photo-card { margin: 0; min-width: 0; }
+.photo-link { position: relative; display: block; border-radius: 6px; transition: transform 260ms ease, box-shadow 260ms ease; box-shadow: 0 12px 26px -20px #16344855; }
+.photo-link img { display: block; width: 100%; height: auto; border-radius: inherit; }
+figcaption { display: flex; justify-content: space-between; gap: 12px; margin-top: 13px; font-size: 11px; letter-spacing: .025em; color: #617d90; }
+.featured-photo { margin-bottom: 0; }
+.featured-photo .photo-link { border-radius: 6px; }
+.journey-cue { display: inline-flex; align-items: center; gap: 20px; font-size: 10px; color: #617d90; margin: 12px 0 64px; padding-block: 10px; }
+.journey-cue span { font-size: 16px; }
+.photo-grid { display: flex; flex-direction: column; gap: clamp(80px, 12vw, 160px); padding-bottom: 50px; }
+.photo-card { width: 70%; align-self: center; }
+.photo-card:nth-child(2) { width: 61%; align-self: flex-end; margin-top: 12px; }
+.photo-card:nth-child(3) { width: 56%; align-self: flex-start; }
+.photo-card:nth-child(4) { width: 76%; align-self: center; }
+.photo-card:nth-child(5) { width: 42%; align-self: flex-start; margin-left: 7%; }
+.photo-card:nth-child(6) { width: 62%; align-self: flex-end; }
+.photo-card:nth-child(7) { width: 82%; align-self: center; margin-top: 30px; }
+footer { display: flex; justify-content: space-between; gap: 24px; padding-block: 48px; margin-top: 40px; border-top: 1px solid #c9deeb; font-size: 11px; color: #617d90; }
+footer p { margin: 0; }
+@media (hover: hover) { .photo-link:hover { transform: translateY(-4px); box-shadow: 0 20px 30px -22px #16344870; } }
+.lightbox { position: fixed; inset: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none; border: 0; padding: 22px 32px; background: #0d1d29; color: #edf7fd; }
+.lightbox[open] { display: flex; flex-direction: column; }
+.lightbox::backdrop { background: #0d1d29; }
+body.viewer-open { overflow: hidden; }
+.viewer-toolbar { display: flex; align-items: center; justify-content: space-between; flex-shrink: 0; }
+.viewer-count, .viewer-caption { font-size: 12px; }
+.lightbox button { border: 1px solid #ffffff30; border-radius: 50%; background: #ffffff0c; color: inherit; min-width: 44px; min-height: 44px; }
+.lightbox .viewer-close { border-radius: 24px; padding: 8px 18px; font-size: 12px; }
+.viewer-close span { font-size: 22px; margin-left: 12px; vertical-align: middle; }
+.viewer-stage { display: grid; grid-template-columns: 44px minmax(0, 1fr) 44px; align-items: center; gap: 24px; flex: 1; min-height: 0; padding-block: 20px; }
+.viewer-image { display: block; width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+.viewer-caption { margin: 0; text-align: center; }
+.viewer-help { text-align: center; font-size: 10px; color: #99afbf; margin: 12px 0 0; }
+@media (max-width: 950px) { .gallery-intro { align-items: start; flex-direction: column; padding-top: 40px; } }
+@media (max-width: 600px) {
+  .site-header { padding-block: 26px; } .brand { font-size: 15px; } .back-link { font-size: 11px; }
+  .gallery-intro { padding: 36px 0 30px; gap: 20px; } .intro-copy { font-size: 12px; }
+  .journey-cue { margin: 0 0 36px; }
+  .photo-grid { gap: 68px; padding-bottom: 12px; }
+  .photo-card { width: 94%; }
+  .photo-card:nth-child(2) { width: 88%; }
+  .photo-card:nth-child(3) { width: 90%; }
+  .photo-card:nth-child(4) { width: 100%; }
+  .photo-card:nth-child(5) { width: 72%; margin-left: 0; }
+  .photo-card:nth-child(6) { width: 90%; }
+  .photo-card:nth-child(7) { width: 100%; margin-top: 0; }
+  footer { padding-block: 32px; font-size: 10px; }
+  .lightbox { padding: 12px; } .viewer-stage { gap: 8px; grid-template-columns: 36px minmax(0, 1fr) 36px; }
+  .lightbox .viewer-prev, .lightbox .viewer-next { min-width: 36px; min-height: 44px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .photo-link { transition: none; } .photo-link:hover { transform: none; } }
+
+.photo-card.reveal-pending { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .photo-card.reveal-pending { opacity: 1; } }
